@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- Label: Dark Mode Toggle with Icon -->
+<button id="theme-toggle">
+  <span id="icon">🌞</span>
+</button>
+    <div class="msg-container hide">
+        <p id="msg">Winner</p>
+        <button id="new-btn">New Game</button>
+    </div>
+    <main>
+        <h1>Tic-Tac-Toe</h1>
+    <div class="container">
+        <div class="game">
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+        </div>
+    </div>
+    <button id="reset-btn">Reset Game</button>
+    </main>
+
+  <!-- Load saved preference -->
+<script>
+    window.onload = function() {
+    let savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      document.body.classList.add("dark-mode");
+      document.body.classList.remove("light-mode");
+      icon.textContent = "🌙";
+    } else {
+  document.body.classList.remove("dark-mode");
+  icon.textContent = "🌞";
+    }
+  };
+</script>
+
+    <script src="app.js"></script>
+</body>
+</html>
